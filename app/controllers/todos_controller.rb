@@ -1,14 +1,20 @@
 class TodosController < ApplicationController
 
+  def index
+  end
+
   def new
     @todo = Todo.new
   end
 
   def create
     @todo = Todo.new(todo_params)
-    @todo.save
-    redirect_to @todo, notice: 'Your new TODO was saved'
-  end
+    if @todo.save
+      redirect_to @todo, notice: 'Your new TODO was saved'
+    else
+      redirect_to @todo, notice: 'Please enter a description'
+    end
+end
 
   def show
     @todo = Todo.find(params[:id])
