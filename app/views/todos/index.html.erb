@@ -1,3 +1,20 @@
-<% @todos.each do |todo| %>
-  <%= todo.description %><br />
-<% end %>
+<table border='1'>
+  <tr>
+    <th>Description</th>
+    <th>Days left</th>
+    <th>Complete</th>
+  </tr>
+  <% @todos.each do |todo| %>
+  <tr>
+    <td class='todo-description'><%= todo.description %></td>
+    <td class='days-left'><%= @days_left %></td>
+    <td class='complete'>x</td>
+  </tr>
+  <% end %>
+  <tr> 
+    <td>Create new todo</td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+
