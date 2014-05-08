@@ -19,6 +19,10 @@ group :development, :test do
   gem 'capybara', '~> 2.2.1'
 end
 
+group :development do
+  gem 'guard-rspec', require: false
+end
+
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
