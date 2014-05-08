@@ -1,1 +1,3 @@
-Posts#index
+<% @todos.each do |todo| %>
+  <%= todo.description %><br />
+<% end %>
