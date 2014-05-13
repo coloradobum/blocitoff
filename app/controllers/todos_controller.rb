@@ -2,7 +2,7 @@ class TodosController < ApplicationController
 
   def index
     @todos = Todo.all
-    @days_left = days_left_until_deletion
+    #@days_left_until_deletion = Todo.days_left_until_deletion
   end
 
   def new
@@ -12,9 +12,9 @@ class TodosController < ApplicationController
   def create
     @todo = Todo.new(todo_params)
     if @todo.save
-      redirect_to @todo, notice: 'Your new TODO was saved'
+      redirect_to todos_path , notice: 'Your new TODO was saved'
     else
-      redirect_to @todo, notice: 'Please enter a description'
+      redirect_to todos_path , notice: 'Please enter a description'
     end
 end
 
