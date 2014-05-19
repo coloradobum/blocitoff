@@ -7,7 +7,7 @@
   <% @todos.each do |todo| %>
   <tr>
     <td class='todo-description'><%= todo.description %></td>
-    <td class='days-left'><%= todo.created_at.day %></td>
+    <td class='days-left'><%= todo.days_left %></td>
     <td class='complete'>x</td>
   </tr>
   <% end %>
