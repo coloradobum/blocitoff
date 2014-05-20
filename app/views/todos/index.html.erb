@@ -4,17 +4,10 @@
     <th>Days left</th>
     <th>Complete</th>
   </tr>
-  <% @todos.each do |todo| %>
+  <%= render partial: "todo", collection: @todos %>
   <tr>
-    <td class='todo-description'><%= todo.description %></td>
-    <td class='days-left'><%= todo.days_left %></td>
-    <td class='complete'>x</td>
-  </tr>
-  <% end %>
-  <tr> 
     <td><%=  link_to "Create new todo", new_todo_path %></td>
     <td></td>
     <td></td>
   </tr>
 </table>
-

@@ -2,7 +2,7 @@ class TodosController < ApplicationController
 
   def index
     @todos = Todo.all
-    @days_left_until_deletion = Todo.days_left_until_deletion
+    #@days_left_until_deletion = Todo.days_left_until_deletion
   end
 
   def new
@@ -26,6 +26,6 @@ end
   private
 
   def todo_params
-    params.require(:todo).permit(:description, :days_left)
+    params.require(:todo).permit(:description)
   end
 end
