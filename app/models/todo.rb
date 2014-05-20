@@ -16,10 +16,8 @@ class Todo < ActiveRecord::Base
   end
 
   def days_left_until_deletion
-    Time.now.utc.to_i - (self.created_at + 7.days).to_i
+    (self.created_at + 7.days).to_i
   end
-
-#{time_ago_in_words(status.created_at)} ago"
 
 private
 
