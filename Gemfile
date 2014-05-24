@@ -30,6 +30,10 @@ group :development, :test do
   gem 'rspec-rails'
 end
 
+group :development do
+  gem 'pry'
+end
+
 group :test do
   gem 'capybara'
 end
