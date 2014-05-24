@@ -7,8 +7,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <h1>My Todos</h1>
+  <p><%= flash[:notice] if flash[:notice] %></p>
+  <p><%= flash[:error] if flash[:error] %></p>
+  <p><%= flash[:alert] if flash[:alert] %></p>
 
-<%= yield %>
+  <%= yield %>
 
 </body>
 </html>

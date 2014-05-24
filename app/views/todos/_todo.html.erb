@@ -1,0 +1,10 @@
+<tr>
+  <td class='todo-description'><%= todo.description %></td>
+  <td class='days-left'><%= distance_of_time_in_words( (todo.created_at.to_i + 7.days), Time.now.utc.to_i, include_seconds: false)  %></td>
+  <td class='complete'>
+    <%= form_for todo do |f|  %>
+      <%= f.check_box :complete %>
+      <%= f.submit "Update" %>
+    <% end %>
+  </td>
+</tr>
