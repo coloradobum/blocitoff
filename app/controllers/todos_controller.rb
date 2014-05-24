@@ -2,7 +2,6 @@ class TodosController < ApplicationController
 
   def index
     @todos = Todo.all
-    #@days_left_until_deletion = Todo.days_left_until_deletion
   end
 
   def new

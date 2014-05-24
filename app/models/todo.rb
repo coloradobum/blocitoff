@@ -9,6 +9,7 @@ class Todo < ActiveRecord::Base
 
   def complete
     @completed_at = Time.now.utc
+    self.update_attribute(:completed_at, @completed_at)
   end
 
   def completed_at
