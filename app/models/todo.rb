@@ -3,6 +3,7 @@ class Todo < ActiveRecord::Base
 
   scope :active, -> { where("created_at > ?", DateTime.now - 7.days) }
   scope :expired, -> { where("created_at < ? AND completed_at IS NULL", DateTime.now - 7.days) }
+  scope :completed, -> { where("completed_at IS NOT NULL")}
 
   def completed=(val)
     self.completed_at = val ? DateTime.now.utc : nil
