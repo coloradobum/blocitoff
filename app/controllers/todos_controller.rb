@@ -18,19 +18,14 @@ class TodosController < ApplicationController
   end
 
   def update
-    respond_to do |wants|
-      wants.js {
-        @todo = Todo.find(params[:id])
-        @todo.update_attributes(todo_params)
-        @todo.complete!
-        head :ok, :content_type => 'application/js'
-      }
-    end
+    @todo = Todo.find(params[:id])
+    @todo.update_attributes!(todo_params)
+    redirect_to todos_path
   end
 
   private
 
   def todo_params
-    params.require(:todo).permit(:description)
+    params.require(:todo).permit(:description, :complete)
   end
 end
