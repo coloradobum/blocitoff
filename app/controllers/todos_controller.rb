@@ -1,7 +1,7 @@
 class TodosController < ApplicationController
 
   def index
-    @todos = Todo.active
+    @todos = Todo.active.where(:complete => false)
   end
 
   def new
@@ -18,17 +18,19 @@ class TodosController < ApplicationController
   end
 
   def update
-    @todo = Todo.find(params[:id])
-    @todo.update_attributes!(params[:todo])
-    redirect_to todos_path
-  end
-
-  def destroy
+    respond_to do |wants|
+      wants.js {
+        @todo = Todo.find(params[:id])
+        @todo.update_attributes(todo_params)
+        @todo.complete!
+        head :ok, :content_type => 'application/js'
+      }
+    end
   end
 
   private
 
   def todo_params
-    params.require(:todo).permit(:description, :complete)
+    params.require(:todo).permit(:description)
   end
 end
