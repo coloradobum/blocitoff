@@ -7,10 +7,9 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <h1>My Todos</h1>
-  <p><%= flash[:notice] if flash[:notice] %></p>
-  <p><%= flash[:error] if flash[:error] %></p>
-  <p><%= flash[:alert] if flash[:alert] %></p>
+  <% flash.each do |name, msg| %>
+    <%= content_tag :div, msg, id: "flash_#{name}" %>
+  <% end %>
 
   <%= yield %>
 

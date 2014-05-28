@@ -1,4 +1,4 @@
-<tr class='todolist'>
+<tr>
   <td class='todo-description'><%= todo.description %></td>
   <td class='days-left'><%= distance_of_time_in_words( (todo.created_at.to_i + 7.days), Time.now.utc.to_i, include_seconds: false)  %></td>
   <td>

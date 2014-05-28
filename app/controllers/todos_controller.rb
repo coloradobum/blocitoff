@@ -12,11 +12,11 @@ class TodosController < ApplicationController
     @todo = Todo.new(todo_params)
     respond_to do |format|
       format.html {
-        # if @todo.save
+        if @todo.save
            redirect_to todos_path, notice: 'Your TODO was saved.'
-        # else
-        #   redirect_to todos_path, notice: 'Please enter a description.'
-        # end
+        else
+          redirect_to todos_path, notice: 'Please enter a description.'
+        end
       }
       format.js
     end

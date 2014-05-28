@@ -1,3 +1,6 @@
 $('#new_todo').remove();
 $('#new_todo_link').show();
-$('.todolist').append('<%= j render(@todo) %>');
+$('#todo-table tbody').append(
+  "<tr>"+
+    "<%= j render(@todo) %></td>"+
+  "</tr>");
