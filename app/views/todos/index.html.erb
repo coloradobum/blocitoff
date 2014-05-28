@@ -6,7 +6,7 @@
   </tr>
   <%= render partial: "todo", collection: @todos %>
   <tr>
-    <td><%=  link_to "Create new todo", new_todo_path %></td>
+    <td><%=  link_to "Create new todo", new_todo_path, id: "new_todo_link", remote: true %></td>
     <td></td>
     <td></td>
   </tr>

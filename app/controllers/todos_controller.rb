@@ -10,11 +10,17 @@ class TodosController < ApplicationController
 
   def create
     @todo = Todo.new(todo_params)
-    if @todo.save
-      redirect_to todos_path, notice: 'Your TODO was saved.'
-    else
-      redirect_to todos_path, notice: 'Please enter a description.'
+    respond_to do |format|
+      format.html {
+        # if @todo.save
+           redirect_to todos_path, notice: 'Your TODO was saved.'
+        # else
+        #   redirect_to todos_path, notice: 'Please enter a description.'
+        # end
+      }
+      format.js
     end
+
   end
 
   def update
