@@ -1,4 +1,5 @@
 class Todo < ActiveRecord::Base
+  belongs_to :user
   validates :description, presence:true
 
   scope :active, -> { where("created_at > ?", DateTime.now - 7.days) }
