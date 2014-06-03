@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 feature 'account signup',  %q{
-As a user
+  As a user
   I want sign-up for an account
   so that I can track my todo list
 } do
@@ -13,7 +13,7 @@ As a user
     click_button 'Sign Up'
     expect(page).to have "Welcome #{username}"
   end
-  
+
   scenario 'Unsuccessfully', :pending => true do
     visit sign_in_path
   end
