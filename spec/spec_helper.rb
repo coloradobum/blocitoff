@@ -44,4 +44,8 @@ RSpec.configure do |config|
 
   # Allow refactoring into modules.
   config.include Features, type: :feature
+
+  # Include Factory Girl syntax to simplify calls to factories
+  config.include FactoryGirl::Syntax::Methods
+
 end

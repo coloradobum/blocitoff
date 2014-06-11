@@ -7,15 +7,7 @@ As a user
 } do
 
   scenario 'Successfully' do
-    visit sign_in_path
-    fill_in 'Email', with: 'person@example.com'
-    fill_in 'Password', with: password
-    click_button 'Sign Up'
-    expect(page).to have "Welcome #{username}"
+    create_user('user@test.com', 'superpassword')
+    sign_in_with('user@test.com', 'superpassword')
   end
-  
-  scenario 'Unsuccessfully', :pending => true do
-    visit sign_in_path
-  end
-
 end
