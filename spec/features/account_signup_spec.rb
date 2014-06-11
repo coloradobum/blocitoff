@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 feature 'account signup',  %q{
-As a user
+  As a user
   I want sign-up for an account
   so that I can track my todo list
 } do
