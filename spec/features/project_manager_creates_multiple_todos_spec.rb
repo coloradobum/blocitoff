@@ -7,11 +7,12 @@ feature 'Project manager creates multiple TODOs', %q{
 } do
 
   scenario 'successfully' do
-    3.times { user_creates_todo 'message 1' }
-    expect(page).to have_content('Your new TODO was saved')
-    expect(page).to have_content('message 1')
-    expect(page).to have_content('message 1')
-    expect(page).to have_content('message 1')
+    create_and_sign_in_user 'test@test.com', 'bigbadpassword' 
+    3.times { |i| user_creates_todo "todo #{i}" }
+    expect(page).to have_content('Your TODO was saved')
+    expect(page).to have_content('todo 0')
+    expect(page).to have_content('todo 1')
+    expect(page).to have_content('todo 2')
   end
 
 end

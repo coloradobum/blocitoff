@@ -10,4 +10,12 @@ feature 'account signup',  %q{
     create_user('user@test.com', 'superpassword')
     sign_in_with('user@test.com', 'superpassword')
   end
+<<<<<<< HEAD
+=======
+
+  scenario 'Unsuccessfully', :pending => true do
+    visit sign_in_path
+  end
+
+>>>>>>> Unique lists for each user.
 end

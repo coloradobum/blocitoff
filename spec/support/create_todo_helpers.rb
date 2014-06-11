@@ -6,6 +6,11 @@ module Features
     click_button 'Save'
   end
   
+  def create_and_sign_in_user email, password
+    create_user email, password
+    sign_in_with email, password
+  end
+  
   def create_user(email, password)
     visit new_user_registration_path
     fill_in 'Email', with: email
