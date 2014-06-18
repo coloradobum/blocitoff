@@ -1,6 +1,6 @@
 class TodosController < ApplicationController
 
-  #before_filter :authenticate_user!
+  ###before_filter :authenticate_user!
 
   def index
     ###@todos = Todo.active.where( :user_id => current_user.id, :complete => false)
