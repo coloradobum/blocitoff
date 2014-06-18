@@ -10,8 +10,8 @@ describe Todo do
      end
 
      it "must make #completed? return true" do
-       subject.complete
-       subject.completed?.should == true
+       subject.complete = true
+       subject.complete.should == true
      end
    end
 

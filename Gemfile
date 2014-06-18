@@ -31,16 +31,18 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 group :development, :test do
+  gem 'pry'
   gem 'rspec-rails'
+  gem 'launchy'
 end
 
 group :development do
-  gem 'pry'
 end
 
 group :test do
   gem 'capybara'
-  gem 'factory_girl'
+  gem 'factory_girl_rails'
+  gem 'selenium-webdriver'
 end
 
 # Use ActiveModel has_secure_password

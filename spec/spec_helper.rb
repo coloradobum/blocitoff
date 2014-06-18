@@ -48,4 +48,7 @@ RSpec.configure do |config|
   # Include Factory Girl syntax to simplify calls to factories
   config.include FactoryGirl::Syntax::Methods
 
+  # Devise support for functional specs
+  config.include Devise::TestHelpers, type: :controller
+
 end

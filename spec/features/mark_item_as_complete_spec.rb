@@ -5,17 +5,18 @@ feature 'Mark Item as complete',  %q{
   I want to mark an item complete
   so that can focus on uncompleted items
 } do
-  
-  background do
-    #create user
-    #create a todo
-  end
 
-  scenario 'delete todo with checked', :pending => true do
-    #login
-    #visit root
-    #check todo off
-    #confirm todo is not viewable
+  scenario 'delete todo with checked', :js => true do
+
+    #user = FactoryGirl.create(:user)
+    #user = User.last
+    #user.confirm!
+    #sign_in_with 'tester@test.com', 'password'
+    user_creates_todo 'Get Cheese'
+    expect(page).to have_content 'Get Cheese'
+    check 'todo_complete'
+    visit current_path
+    expect(page).to_not have_content 'Get Cheese'
   end
 
 end

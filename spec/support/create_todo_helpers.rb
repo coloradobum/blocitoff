@@ -17,8 +17,7 @@ module Features
     fill_in 'Password', with: password
     fill_in 'Password confirmation', with: password
     click_button 'Sign up'
-    user = User.last
-    user.confirm!
+    User.last.confirm!
   end
 
   def sign_in_with(email, password)
@@ -26,6 +25,6 @@ module Features
     fill_in 'Email', with: email
     fill_in 'Password', with: password
     click_button 'Sign in'
-    expect(page).to have_content("Logged in as #{email}")
+    #save_and_open_page
   end
 end
