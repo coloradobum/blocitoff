@@ -6,8 +6,13 @@ feature 'When a to-do item is marked as complete, it should be deleted from the 
   so I can focus on remaing todos 
 } do
 
+  let(:user) { FactoryGirl.create :user, :confirmed }
+
+  before do
+    sign_in_with(user.email, user.password)
+  end
+
   scenario 'successfully delete a todo', js: true do
-    create_and_sign_in_user 'user@test.com', 'password'
     user_creates_todo 'Get wine'
     visit todos_path
     expect(page).to have_content('Get wine')

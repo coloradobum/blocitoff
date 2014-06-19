@@ -12,12 +12,12 @@ feature 'Auto delete after 7 days',  %q{
     visit todos_path
     expect(page).to have_content('Get Bread')
     expect(page).to have_content('7 days')
-    save_and_open_page
+    #save_and_open_page
     
     change_creation_date 8
     visit current_path
     expect(page).to_not have_content('Get Bread')
-    save_and_open_page 
+    #save_and_open_page 
   end
 
   private
