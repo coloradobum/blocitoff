@@ -7,7 +7,7 @@ feature 'Project manager creates TODO',  %q{
 } do
 
   scenario 'Create a new todo list' do
-    #create_and_sign_in_user 'user@test.com, 'password'
+    create_and_sign_in_user 'user@test.com', 'password'
     user_creates_todo 'Get Milk'
     visit todos_path
     expect(page).to have_content('Get Milk')

@@ -1,10 +1,9 @@
 class TodosController < ApplicationController
 
-  ###before_filter :authenticate_user!
+  before_filter :authenticate_user!
 
   def index
-    ###@todos = Todo.active.where( :user_id => current_user.id, :complete => false)
-    @todos = Todo.active.where( :complete => false)
+    @todos = Todo.active.where( :user_id => current_user.id, :complete => false)
   end
 
   def new
@@ -12,8 +11,7 @@ class TodosController < ApplicationController
   end
 
   def create
-    ###@todo = current_user.todos.build(todo_params)
-    @todo = Todo.new(todo_params)
+    @todo = current_user.todos.build(todo_params)
 
     respond_to do |format|
       format.html {

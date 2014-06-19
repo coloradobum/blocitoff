@@ -8,7 +8,7 @@ feature 'account signup',  %q{
 
   scenario 'Successfully' do
     create_and_sign_in_user 'user@test.com', 'password'
-    expect(page).t ohave_content('My Todo List') 
+    expect(page).to have_content('My Todo List') 
   end
 
 end

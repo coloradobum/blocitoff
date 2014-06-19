@@ -7,7 +7,7 @@ feature 'Auto delete after 7 days',  %q{
 } do
 
   scenario 'Successfully' do
-    #create_and_sign_in_user 'test@test.com', 'password'
+    create_and_sign_in_user 'test@test.com', 'password'
     user_creates_todo 'Get Bread'
     visit todos_path
     expect(page).to have_content('Get Bread')

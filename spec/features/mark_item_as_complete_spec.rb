@@ -8,10 +8,7 @@ feature 'Mark Item as complete',  %q{
 
   scenario 'delete todo with checked', :js => true do
 
-    #user = FactoryGirl.create(:user)
-    #user = User.last
-    #user.confirm!
-    #sign_in_with 'tester@test.com', 'password'
+    create_and_sign_in_user 'tester@test.com', 'password'
     user_creates_todo 'Get Cheese'
     expect(page).to have_content 'Get Cheese'
     check 'todo_complete'
